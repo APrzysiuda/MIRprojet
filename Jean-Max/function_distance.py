@@ -26,7 +26,6 @@ def bhatta(l1, l2):
     den = np.sqrt(np.sum(l1,dtype=np.float64)*np.sum(l2,dtype=np.float64))
     return math.sqrt( 1 - num / den )
 
-
 def flann(a,b):
     a = np.float32(np.array(a))
     b = np.float32(np.array(b))

@@ -14,5 +14,5 @@ image=cv2.imread(os.path.join(dataPath,imageName))
 ordering,chrono=search(dataPath,featurePath,image,parameters)
 
 for ele in ordering[:100]:
-    print(ele.score,ele.imageName,os.path.join(dataPath,ele.imageName))
+    print(ele.score,ele.imageName,os.path.join(dataPath,ele.imageName+".jpg"))
 

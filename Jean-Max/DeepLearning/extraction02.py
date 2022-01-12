@@ -15,6 +15,6 @@ modelvgg19_1 = Model(inputs=modelvgg19.input, outputs=modelvgg19.layers[-2].outp
 generate(input,output1,"VGG19_1",modelvgg19_1,applications.vgg19.preprocess_input)
 
 modelresnet50 = applications.resnet50.ResNet50(weights='imagenet')
-generate(input,output1,"ResNet50",modelresnet50,applications.resnet50.preprocess_input)
+generate(input,output0,"ResNet50",modelresnet50,applications.resnet50.preprocess_input)
 modelresnet50_1 = Model(inputs=modelresnet50.input, outputs=modelresnet50.layers[-2].output)
-generate(input,output0,"ResNet50_1",modelresnet50_1,applications.resnet50.preprocess_input)
+generate(input,output1,"ResNet50_1",modelresnet50_1,applications.resnet50.preprocess_input)

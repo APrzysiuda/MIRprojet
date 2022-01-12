@@ -10,4 +10,4 @@ for indicateurName in os.listdir(output):
     listFile=os.listdir(path)
     path1 = os.path.join(path, listFile[0])
     vector = np.loadtxt(path1)
-    print(indicateurName,len(np.ndarray.flatten(vector)))
+    print(indicateurName,np.shape(vector))

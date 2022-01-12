@@ -4,9 +4,9 @@ from distance import *
 from extraction import *
 
 class Parameter:
-    def __init__(self,distanceName,featureName,wheight):
-        self.distanceName=distanceName
+    def __init__(self,featureName,distanceName,wheight):
         self.featureName=featureName
+        self.distanceName = distanceName
         self.wheight=wheight
 
 class Image:
@@ -15,10 +15,6 @@ class Image:
         self.score=0
     def addScore(self,score):
         self.score+=score
-
-    def __str__(self):
-        return self.imageName + ' - ' + self.requestName + ' - ' + self.distanceName + ' - ' + str(
-            self.distance) + ' - ' + str(self.brand)
 
 def search(dataPath,featurePath,requestImage,parameters):
     start=time.time()
@@ -33,4 +29,4 @@ def search(dataPath,featurePath,requestImage,parameters):
             image.addScore(parameter.wheight*distance(requestFeature,comparisonFeature,parameter.distanceName))
     ordering.sort(key=lambda x: x.score)
     chrono=time.time()-start
-    return ordering,time
+    return ordering,chrono

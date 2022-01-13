@@ -33,6 +33,8 @@ for featureName in listFeatureName:
 
     finalTotal = 0
 
+    listRappel20 = []
+    listPrecision20 = []
     listRappel50 = []
     listPrecision50 = []
     listRappel100 = []
@@ -40,10 +42,12 @@ for featureName in listFeatureName:
     listRappel500 = []
     listPrecision500 = []
 
-    for requestName in listRequestName[:3]:
+    for requestName in listRequestName:
         requestBrand=int(requestName.split('_')[0])
         listDistance=getDistance(featurePath,requestName,distanceName)
         eval=evaluation(requestName, listDistance, requestBrand)
+        listRappel20.append(eval.rappel20)
+        listPrecision20.append(eval.precision20)
         listRappel50.append(eval.rappel50)
         listPrecision50.append(eval.precision50)
         listRappel100.append(eval.rappel100)
@@ -53,6 +57,15 @@ for featureName in listFeatureName:
         finalTotal += eval.total
 
     print("Total :" + str(finalTotal))
+    print("20 :")
+    print("   Rappel : ")
+    print("      Min :" + str(min(listRappel20)))
+    print("      Moy :" + str(np.mean(listRappel20)))
+    print("      Max :" + str(max(listRappel20)))
+    print("   Precision : ")
+    print("      Min :" + str(min(listPrecision20)))
+    print("      Moy :" + str(np.mean(listPrecision20)))
+    print("      Max :" + str(max(listPrecision20)))
     print("50 :")
     print("   Rappel : ")
     print("      Min :" + str(min(listRappel50)))

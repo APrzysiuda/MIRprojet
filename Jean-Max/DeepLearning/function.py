@@ -24,10 +24,13 @@ class Distance:
 
 
 class Evaluation:
-    def __init__(self, name, RT, RR50, RR100, RR500,total):
+    def __init__(self, name, RT, RR20, RR50, RR100, RR500,total):
         self.name = name
 
         self.total = total
+
+        self.rappel20 = RR20 / RT
+        self.precision20 = RR20 / 20
 
         self.rappel50 = RR50 / RT
         self.precision50 = RR50 / 50
@@ -42,6 +45,10 @@ class Evaluation:
         string = "--> " + self.name
 
         string += "\nTotal :" + str(self.total)
+
+        string += "\n20 :"
+        string += "\n   Rappel : " + str(self.rappel20)
+        string += "\n   Precision : " + str(self.precision20)
 
         string += "\n50 :"
         string += "\n   Rappel : " + str(self.rappel50)
@@ -79,6 +86,7 @@ def generate(input,generalOutput,name,model,preprocess):
 
 
 def evaluation(name, listDistance, requestBrand):
+    RR20 = 0
     RR50 = 0
     RR100 = 0
     RR500 = 0
@@ -95,7 +103,9 @@ def evaluation(name, listDistance, requestBrand):
                     RR100 += 1
                     if i < 50:
                         RR50 += 1
-    eval = Evaluation(name, RT, RR50, RR100, RR500,total)
+                        if i < 20:
+                            RR20 += 1
+    eval = Evaluation(name, RT, RR20, RR50, RR100, RR500,total)
     return eval
 
 

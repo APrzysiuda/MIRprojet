@@ -1,7 +1,7 @@
 from function import *
 
 input="D:/MIR/Data"
-output="D:/MIR/DeepLearning_1"
+output="D:/MIR/DeepLearning"
 
 listRequestName=[
     "0_1_BMW_X3_279",

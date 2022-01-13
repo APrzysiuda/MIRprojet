@@ -1,4 +1,2 @@
-import os
-
-
-print(os.path.join("1","2","3"))
+v=[0,1,2,3]
+print(v/2)

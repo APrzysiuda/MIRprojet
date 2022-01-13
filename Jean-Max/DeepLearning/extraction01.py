@@ -1,6 +1,6 @@
 from function import *
 
-input="D:/MIR/Data"
+input="D:/MIR/Data1"
 output0="D:/MIR/DeepLearning"
 output1="D:/MIR/DeepLearning_1"
 

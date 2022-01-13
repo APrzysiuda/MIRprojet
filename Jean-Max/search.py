@@ -1,5 +1,3 @@
-import time
-
 from distance import *
 from extraction import *
 

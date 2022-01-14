@@ -1,2 +1,6 @@
-v=[0,1,2,3]
-print(v/2)
+def f1(a,b):
+    return a+b
+
+x=f1
+
+print(x(1,2))

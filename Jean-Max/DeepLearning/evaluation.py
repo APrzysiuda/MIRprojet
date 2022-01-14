@@ -1,32 +1,33 @@
 from function import *
 
 input="D:/MIR/Data"
-output="D:/MIR/DeepLearning_1"
+output="D:/MIR/Indicateur"
 
 listRequestName=[
-    "0_1_BMW_X3_279",
-    "0_0_BMW_Serie3Berline_45",
-    "0_2_BMW_i8_407",
-    "2_0_Volkswagen_Touareg_2839",
-    "2_4_Volkswagen_Polo_3471",
-    "2_9_Volkswagen_T-Roc_4322",
-    "4_2_Opel_vivarofourgon_5982",
-    "4_4_Opel_Insignatourer_6351",
-    "4_8_Opel_GrandlandX_6805",
-    "6_0_Hyundai_Nexo_8397",
-    "6_3_Hyundai_i10_8736",
-    "6_4_Hyundai_i30fastback_9021",
-    "8_1_Ford_Puma_11198",
-    "8_5_Ford_Explorer_11890",
-    "8_7_Ford_Fiesta_12211"
+    "0_1_BMW_X3_279.txt",
+    "0_0_BMW_Serie3Berline_45.txt",
+    "0_2_BMW_i8_407.txt",
+    "2_0_Volkswagen_Touareg_2839.txt",
+    "2_4_Volkswagen_Polo_3471.txt",
+    "2_9_Volkswagen_T-Roc_4322.txt",
+    "4_2_Opel_vivarofourgon_5982.txt",
+    "4_4_Opel_Insignatourer_6351.txt",
+    "4_8_Opel_GrandlandX_6805.txt",
+    "6_0_Hyundai_Nexo_8397.txt",
+    "6_3_Hyundai_i10_8736.txt",
+    "6_4_Hyundai_i30fastback_9021.txt",
+    "8_1_Ford_Puma_11198.txt",
+    "8_5_Ford_Explorer_11890.txt",
+    "8_7_Ford_Fiesta_12211.txt"
 ]
 
-distanceName="Euclidienne"
+distanceName="Random"
 
 listFeatureName=os.listdir(output)
 featureNumber = len(listFeatureName)
+featureName="GLCM"
 
-for featureName in listFeatureName:
+for i in range(10):
     print("---> " + featureName)
 
     featurePath = os.path.join(output, featureName)
